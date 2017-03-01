@@ -1,0 +1,6 @@
+langcode: en
+status: true
+dependencies: {  }
+id: text_with_right_column
+label: 'Text with right column'
+behavior_plugins: {  }

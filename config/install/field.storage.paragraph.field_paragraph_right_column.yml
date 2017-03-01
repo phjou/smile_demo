@@ -3,11 +3,10 @@ status: true
 dependencies:
   module:
     - entity_reference_revisions
-    - node
     - paragraphs
-id: node.field_page_demo_list_image
-field_name: field_page_demo_list_image
-entity_type: node
+id: paragraph.field_paragraph_right_column
+field_name: field_paragraph_right_column
+entity_type: paragraph
 type: entity_reference_revisions
 settings:
   target_type: paragraph

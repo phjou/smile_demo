@@ -3,7 +3,7 @@ status: true
 dependencies:
   config:
     - field.field.node.page_demo.body
-    - field.field.node.page_demo.field_page_demo_list_image
+    - field.field.node.page_demo.field_demo_page_paragraphs
     - node.type.page_demo
   module:
     - paragraphs
@@ -27,9 +27,9 @@ content:
     weight: 10
     settings: {  }
     third_party_settings: {  }
-  field_page_demo_list_image:
+  field_demo_page_paragraphs:
     type: entity_reference_paragraphs
-    weight: 32
+    weight: 33
     settings:
       title: Paragraph
       title_plural: Paragraphs

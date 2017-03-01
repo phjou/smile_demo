@@ -1,0 +1,32 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_demo_page_paragraphs
+    - node.type.page_demo
+    - paragraphs.paragraphs_type.text_with_right_column
+  module:
+    - entity_reference_revisions
+id: node.page_demo.field_demo_page_paragraphs
+field_name: field_demo_page_paragraphs
+entity_type: node
+bundle: page_demo
+label: Paragraphs
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      text_with_right_column: text_with_right_column
+    target_bundles_drag_drop:
+      image_list:
+        weight: 3
+        enabled: false
+      text_with_right_column:
+        enabled: true
+        weight: 4
+field_type: entity_reference_revisions
