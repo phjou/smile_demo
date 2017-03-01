@@ -1,0 +1,30 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.image_list.field_image_list_img
+    - field.field.paragraph.image_list.field_image_list_legend
+    - paragraphs.paragraphs_type.image_list
+  module:
+    - image
+    - text
+id: paragraph.image_list.default
+targetEntityType: paragraph
+bundle: image_list
+mode: default
+content:
+  field_image_list_img:
+    weight: 0
+    label: hidden
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+  field_image_list_legend:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+hidden: {  }

@@ -1,0 +1,33 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.page_demo.body
+    - field.field.node.page_demo.field_page_demo_list_image
+    - node.type.page_demo
+  module:
+    - entity_reference_revisions
+    - text
+    - user
+id: node.page_demo.default
+targetEntityType: node
+bundle: page_demo
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+  field_page_demo_list_image:
+    type: entity_reference_revisions_entity_view
+    weight: 102
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+  links:
+    weight: 100
+hidden: {  }

@@ -1,0 +1,14 @@
+name: smile_demo
+type: module
+core: 8.x
+dependencies:
+  - entity_reference_revisions
+  - field
+  - file
+  - image
+  - menu_ui
+  - node
+  - paragraphs
+  - path
+  - text
+  - user

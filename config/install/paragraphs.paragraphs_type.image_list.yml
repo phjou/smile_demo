@@ -1,0 +1,6 @@
+langcode: en
+status: true
+dependencies: {  }
+id: image_list
+label: 'Image list'
+behavior_plugins: {  }
