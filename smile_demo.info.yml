@@ -3,11 +3,13 @@ type: module
 core: 8.x
 dependencies:
   - block
+  - color_field
   - entity_reference_revisions
   - field
   - file
   - help
   - image
+  - link
   - menu_ui
   - node
   - paragraphs

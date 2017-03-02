@@ -1,0 +1,6 @@
+langcode: en
+status: true
+dependencies: {  }
+id: colored_link_block
+label: 'Colored link block'
+behavior_plugins: {  }

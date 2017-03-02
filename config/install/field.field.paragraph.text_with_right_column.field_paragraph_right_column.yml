@@ -3,6 +3,7 @@ status: true
 dependencies:
   config:
     - field.storage.paragraph.field_paragraph_right_column
+    - paragraphs.paragraphs_type.colored_link_block
     - paragraphs.paragraphs_type.image_list
     - paragraphs.paragraphs_type.newsletter
     - paragraphs.paragraphs_type.text_with_right_column
@@ -24,6 +25,7 @@ settings:
     target_bundles:
       image_list: image_list
       newsletter: newsletter
+      colored_link_block: colored_link_block
     target_bundles_drag_drop:
       image_list:
         enabled: true
@@ -32,6 +34,9 @@ settings:
         weight: 4
         enabled: false
       newsletter:
+        enabled: true
+        weight: 5
+      colored_link_block:
         enabled: true
         weight: 5
 field_type: entity_reference_revisions

@@ -1,0 +1,39 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.colored_link_block.field_block_link
+    - field.field.paragraph.colored_link_block.field_block_title
+    - field.field.paragraph.colored_link_block.field_color_block
+    - paragraphs.paragraphs_type.colored_link_block
+  module:
+    - color_field
+    - link
+id: paragraph.colored_link_block.default
+targetEntityType: paragraph
+bundle: colored_link_block
+mode: default
+content:
+  field_block_link:
+    weight: 2
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+  field_block_title:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+  field_color_block:
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    type: color_field_widget_html5
+hidden:
+  created: true
+  status: true
+  uid: true
