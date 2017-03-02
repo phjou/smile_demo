@@ -1,0 +1,14 @@
+<?php
+
+/**
+ * Implements hook_theme().
+ */
+function smile_demo_theme() {
+  return array(
+    'block_esi' => [
+      'variables' => [
+        'product_id' => NULL
+      ],
+    ],
+  );
+}
