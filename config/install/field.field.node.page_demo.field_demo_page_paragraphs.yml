@@ -4,7 +4,6 @@ dependencies:
   config:
     - field.storage.node.field_demo_page_paragraphs
     - node.type.page_demo
-    - paragraphs.paragraphs_type.newsletter
     - paragraphs.paragraphs_type.text_with_right_column
   module:
     - entity_reference_revisions
@@ -23,7 +22,6 @@ settings:
   handler_settings:
     target_bundles:
       text_with_right_column: text_with_right_column
-      newsletter: newsletter
     target_bundles_drag_drop:
       image_list:
         weight: 3
@@ -32,6 +30,6 @@ settings:
         enabled: true
         weight: 4
       newsletter:
-        enabled: true
         weight: 5
+        enabled: false
 field_type: entity_reference_revisions
