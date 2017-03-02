@@ -1,0 +1,36 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.newsletter.field_introduction_sentence
+    - field.field.paragraph.newsletter.field_placeholder_newsletter
+    - field.field.paragraph.newsletter.field_submit_button_text
+    - paragraphs.paragraphs_type.newsletter
+  module:
+    - text
+id: paragraph.newsletter.default
+targetEntityType: paragraph
+bundle: newsletter
+mode: default
+content:
+  field_introduction_sentence:
+    weight: 0
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+  field_placeholder_newsletter:
+    weight: 1
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+  field_submit_button_text:
+    weight: 2
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+hidden: {  }
