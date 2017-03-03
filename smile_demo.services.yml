@@ -1,0 +1,5 @@
+services:
+  smile_demo.redirection:
+    class: Drupal\smile_demo\EventSubscriber\MagentoSubscriber
+    tags:
+      - {name: event_subscriber}

@@ -1,5 +1,7 @@
 <?php
 
+use \Drupal\Core\Form\FormStateInterface;
+
 /**
  * Implements hook_theme().
  */
@@ -11,4 +13,46 @@ function smile_demo_theme() {
       ],
     ],
   );
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function smile_demo_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  if ($form_id == 'user_login_form') {
+    $form['#submit'][] = 'smile_demo_magento_login';
+  }
+}
+
+/**
+ * Function to get the magento token.
+ */
+function smile_demo_magento_login($form, FormStateInterface $form_state) {
+  $userData = array("username" => "phjou@smile.fr", "password" => "Azertyuiop1");
+  $ch = curl_init("http://ixina-fr.fbd.vitry.intranet/index.php/rest/V1/integration/customer/token");
+  curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+  curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($userData));
+  curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+  curl_setopt($ch, CURLOPT_HTTPHEADER, array("Content-Type: application/json", "Content-Lenght: " . strlen(json_encode($userData))));
+ 
+  $token = curl_exec($ch);
+
+  if (is_string($token) && !empty($token)) {
+    $tempstore = \Drupal::service('user.private_tempstore')->get('demo_magento');
+    $tempstore->set('magento_token', $token);
+  }
+  else {
+    drupal_set_message(t('Error Magento id is not valid'), 'error');
+  }
+}
+
+/**
+ * Implements hook_entity_presave().
+ */
+function smile_demo_entity_presave(Drupal\Core\Entity\EntityInterface $entity) {
+    $tempstore = \Drupal::service('user.private_tempstore')->get('magento_data');
+    $magento_id = [
+      'value' => $tempstore->get('magento_id')
+    ];
+    $entity->set('field_magento_id', $magento_id);
 }
