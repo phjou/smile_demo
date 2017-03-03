@@ -12,4 +12,5 @@ excluded:
   - block.block.smile_demo_theme_powered
   - block.block.smile_demo_theme_search
   - block.block.smile_demo_theme_tools
+  - block.block.smile_demo_theme_productblock
 required: true

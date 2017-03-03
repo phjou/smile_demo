@@ -6,6 +6,7 @@ dependencies:
     - paragraphs.paragraphs_type.colored_link_block
     - paragraphs.paragraphs_type.image_list
     - paragraphs.paragraphs_type.newsletter
+    - paragraphs.paragraphs_type.product_block
     - paragraphs.paragraphs_type.text_with_right_column
   module:
     - entity_reference_revisions
@@ -26,6 +27,7 @@ settings:
       image_list: image_list
       newsletter: newsletter
       colored_link_block: colored_link_block
+      product_block: product_block
     target_bundles_drag_drop:
       image_list:
         enabled: true
@@ -39,4 +41,7 @@ settings:
       colored_link_block:
         enabled: true
         weight: 5
+      product_block:
+        enabled: true
+        weight: 9
 field_type: entity_reference_revisions

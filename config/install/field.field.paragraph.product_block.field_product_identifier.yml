@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_product_identifier
+    - paragraphs.paragraphs_type.product_block
+id: paragraph.product_block.field_product_identifier
+field_name: field_product_identifier
+entity_type: paragraph
+bundle: product_block
+label: 'Product identifier (SKU)'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,19 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.product_block.field_product_identifier
+    - paragraphs.paragraphs_type.product_block
+id: paragraph.product_block.default
+targetEntityType: paragraph
+bundle: product_block
+mode: default
+content:
+  field_product_identifier:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+hidden: {  }
