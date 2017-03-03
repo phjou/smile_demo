@@ -11,7 +11,7 @@ use Drupal\Core\Form\FormStateInterface;
  *
  * @Block(
  *   id = "magento_user_block",
- *   admin_label = @Translation("Magento User block"),
+ *   admin_label = @Translation("Magento Adresses block"),
  * )
  */
 class UserBlock extends BlockBase {
