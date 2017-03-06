@@ -2,15 +2,16 @@ langcode: en
 status: true
 dependencies:
   module:
-    - color_field
     - paragraphs
-id: paragraph.field_color_block
-field_name: field_color_block
+id: paragraph.field_sous_titre
+field_name: field_sous_titre
 entity_type: paragraph
-type: color_field_type
+type: string
 settings:
-  format: '#HEXHEX'
-module: color_field
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
 locked: false
 cardinality: 1
 translatable: true

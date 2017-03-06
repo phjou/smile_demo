@@ -4,8 +4,8 @@ dependencies:
   module:
     - paragraphs
     - text
-id: paragraph.field_paragraph_text
-field_name: field_paragraph_text
+id: paragraph.field_para_rich_text_
+field_name: field_para_rich_text_
 entity_type: paragraph
 type: text_long
 settings: {  }

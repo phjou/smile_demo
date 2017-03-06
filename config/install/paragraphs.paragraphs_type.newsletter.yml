@@ -2,5 +2,5 @@ langcode: en
 status: true
 dependencies: {  }
 id: newsletter
-label: Newsletter
+label: 'S''inscrire à la newsletter'
 behavior_plugins: {  }

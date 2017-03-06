@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_para_rich_text_
+    - paragraphs.paragraphs_type.paragraph_rich_text
+  module:
+    - text
+id: paragraph.paragraph_rich_text.field_para_rich_text_
+field_name: field_para_rich_text_
+entity_type: paragraph
+bundle: paragraph_rich_text
+label: Texte
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

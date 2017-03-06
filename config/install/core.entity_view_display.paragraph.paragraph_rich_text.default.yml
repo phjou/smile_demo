@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.paragraph_rich_text.field_para_rich_text_
+    - paragraphs.paragraphs_type.paragraph_rich_text
+  module:
+    - text
+id: paragraph.paragraph_rich_text.default
+targetEntityType: paragraph
+bundle: paragraph_rich_text
+mode: default
+content:
+  field_para_rich_text_:
+    weight: 0
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+hidden: {  }

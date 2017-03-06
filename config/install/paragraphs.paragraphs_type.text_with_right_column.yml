@@ -2,5 +2,5 @@ langcode: en
 status: true
 dependencies: {  }
 id: text_with_right_column
-label: 'Text with right column'
+label: 'Ligne 60 / 40'
 behavior_plugins: {  }

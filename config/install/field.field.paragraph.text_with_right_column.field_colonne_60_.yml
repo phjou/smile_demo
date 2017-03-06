@@ -2,8 +2,7 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_demo_page_paragraphs
-    - node.type.page_demo
+    - field.storage.paragraph.field_colonne_60_
     - paragraphs.paragraphs_type.colored_link_block
     - paragraphs.paragraphs_type.image_list
     - paragraphs.paragraphs_type.newsletter
@@ -12,11 +11,11 @@ dependencies:
     - paragraphs.paragraphs_type.text_with_right_column
   module:
     - entity_reference_revisions
-id: node.page_demo.field_demo_page_paragraphs
-field_name: field_demo_page_paragraphs
-entity_type: node
-bundle: page_demo
-label: Paragraphs
+id: paragraph.text_with_right_column.field_colonne_60_
+field_name: field_colonne_60_
+entity_type: paragraph
+bundle: text_with_right_column
+label: 'Colonne 60%'
 description: ''
 required: false
 translatable: false
@@ -26,29 +25,28 @@ settings:
   handler: 'default:paragraph'
   handler_settings:
     target_bundles:
-      image_list: image_list
-      text_with_right_column: text_with_right_column
-      newsletter: newsletter
       colored_link_block: colored_link_block
+      image_list: image_list
+      newsletter: newsletter
       paragraph_rich_text: paragraph_rich_text
       product_block: product_block
     target_bundles_drag_drop:
-      image_list:
-        enabled: true
-        weight: 3
-      text_with_right_column:
-        enabled: true
-        weight: 4
-      newsletter:
-        enabled: true
-        weight: 5
       colored_link_block:
         enabled: true
         weight: 7
+      image_list:
+        enabled: true
+        weight: 8
+      newsletter:
+        enabled: true
+        weight: 9
       paragraph_rich_text:
         enabled: true
         weight: 10
       product_block:
         enabled: true
         weight: 11
+      text_with_right_column:
+        weight: 12
+        enabled: false
 field_type: entity_reference_revisions

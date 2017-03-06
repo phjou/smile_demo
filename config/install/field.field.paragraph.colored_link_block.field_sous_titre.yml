@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_sous_titre
+    - paragraphs.paragraphs_type.colored_link_block
+id: paragraph.colored_link_block.field_sous_titre
+field_name: field_sous_titre
+entity_type: paragraph
+bundle: colored_link_block
+label: 'Sous titre'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

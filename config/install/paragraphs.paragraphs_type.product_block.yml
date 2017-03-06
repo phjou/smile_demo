@@ -2,5 +2,5 @@ langcode: en
 status: true
 dependencies: {  }
 id: product_block
-label: 'Product Block'
+label: 'Mise en avant produit'
 behavior_plugins: {  }

@@ -4,10 +4,11 @@ dependencies:
   config:
     - field.field.paragraph.colored_link_block.field_block_link
     - field.field.paragraph.colored_link_block.field_block_title
-    - field.field.paragraph.colored_link_block.field_color_block
+    - field.field.paragraph.colored_link_block.field_colored_image
+    - field.field.paragraph.colored_link_block.field_sous_titre
     - paragraphs.paragraphs_type.colored_link_block
   module:
-    - color_field
+    - image
     - link
 id: paragraph.colored_link_block.default
 targetEntityType: paragraph
@@ -32,12 +33,19 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
-  field_color_block:
-    weight: 0
+  field_colored_image:
+    weight: 4
     label: hidden
     settings:
-      format: hex
-      opacity: true
+      image_style: ''
+      image_link: ''
     third_party_settings: {  }
-    type: color_field_formatter_text
+    type: image
+  field_sous_titre:
+    weight: 3
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
 hidden: {  }

@@ -4,10 +4,12 @@ dependencies:
   config:
     - field.field.paragraph.colored_link_block.field_block_link
     - field.field.paragraph.colored_link_block.field_block_title
-    - field.field.paragraph.colored_link_block.field_color_block
+    - field.field.paragraph.colored_link_block.field_colored_image
+    - field.field.paragraph.colored_link_block.field_sous_titre
+    - image.style.thumbnail
     - paragraphs.paragraphs_type.colored_link_block
   module:
-    - color_field
+    - image
     - link
 id: paragraph.colored_link_block.default
 targetEntityType: paragraph
@@ -15,7 +17,7 @@ bundle: colored_link_block
 mode: default
 content:
   field_block_link:
-    weight: 2
+    weight: 3
     settings:
       placeholder_url: ''
       placeholder_title: ''
@@ -28,11 +30,20 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
-  field_color_block:
-    weight: 0
-    settings: {  }
+  field_colored_image:
+    weight: 4
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
     third_party_settings: {  }
-    type: color_field_widget_html5
+    type: image_image
+  field_sous_titre:
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
 hidden:
   created: true
   status: true

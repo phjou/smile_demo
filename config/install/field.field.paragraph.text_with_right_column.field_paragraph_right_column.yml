@@ -6,6 +6,7 @@ dependencies:
     - paragraphs.paragraphs_type.colored_link_block
     - paragraphs.paragraphs_type.image_list
     - paragraphs.paragraphs_type.newsletter
+    - paragraphs.paragraphs_type.paragraph_rich_text
     - paragraphs.paragraphs_type.product_block
     - paragraphs.paragraphs_type.text_with_right_column
   module:
@@ -14,7 +15,7 @@ id: paragraph.text_with_right_column.field_paragraph_right_column
 field_name: field_paragraph_right_column
 entity_type: paragraph
 bundle: text_with_right_column
-label: 'Right Column'
+label: 'Colonne 40%'
 description: ''
 required: false
 translatable: false
@@ -28,6 +29,7 @@ settings:
       newsletter: newsletter
       colored_link_block: colored_link_block
       product_block: product_block
+      paragraph_rich_text: paragraph_rich_text
     target_bundles_drag_drop:
       image_list:
         enabled: true
@@ -44,4 +46,7 @@ settings:
       product_block:
         enabled: true
         weight: 9
+      paragraph_rich_text:
+        enabled: true
+        weight: 10
 field_type: entity_reference_revisions

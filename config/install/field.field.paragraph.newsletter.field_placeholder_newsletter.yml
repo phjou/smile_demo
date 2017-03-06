@@ -12,7 +12,9 @@ label: Placeholder
 description: ''
 required: false
 translatable: false
-default_value: {  }
+default_value:
+  -
+    value: 'SAISIR VOTRE EMAIL'
 default_value_callback: ''
 settings: {  }
 field_type: string

@@ -12,7 +12,9 @@ label: 'Submit button text'
 description: ''
 required: false
 translatable: false
-default_value: {  }
+default_value:
+  -
+    value: ok
 default_value_callback: ''
 settings: {  }
 field_type: string
