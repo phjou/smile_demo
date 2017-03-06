@@ -1,0 +1,13 @@
+<div>
+  {% for order in orders  %}
+    {% for product  in order['items'] %}
+      <div>
+        {{ product['name'] }}
+        {{ product['quantity'] }}
+        {{ product['price'] }}{{ order['base_currency_code'] }}
+      </div>
+    {% endfor %}
+    <div>{{ "Total:"|t }} {{ order['subtotal'] }}{{ order['base_currency_code'] }}</div>
+  {% endfor %}
+</div>
+

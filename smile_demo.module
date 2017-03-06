@@ -12,6 +12,11 @@ function smile_demo_theme() {
         'product_id' => NULL
       ],
     ],
+    'orders_block' => [
+      'variables' => [
+        'orders' => NULL,
+      ]
+    ],
   );
 }
 
@@ -50,9 +55,11 @@ function smile_demo_magento_login($form, FormStateInterface $form_state) {
  * Implements hook_entity_presave().
  */
 function smile_demo_entity_presave(Drupal\Core\Entity\EntityInterface $entity) {
-    $tempstore = \Drupal::service('user.private_tempstore')->get('magento_data');
-    $magento_id = [
-      'value' => $tempstore->get('magento_id')
-    ];
-    $entity->set('field_magento_id', $magento_id);
+    if ($entity->getEntityTypeId() == 'user') {
+      $tempstore = \Drupal::service('user.private_tempstore')->get('magento_data');
+      $magento_id = [
+        'value' => $tempstore->get('magento_id')
+      ];
+      $entity->set('field_magento_id', $magento_id);
+    }
 }
