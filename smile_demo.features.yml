@@ -12,5 +12,4 @@ excluded:
   - block.block.smile_demo_theme_powered
   - block.block.smile_demo_theme_search
   - block.block.smile_demo_theme_tools
-  - paragraphs.paragraphs_type.paragraph_rich_text
 required: true

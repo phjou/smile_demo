@@ -1,0 +1,6 @@
+langcode: en
+status: true
+dependencies: {  }
+id: paragraph_rich_text
+label: 'Texte riche'
+behavior_plugins: {  }
