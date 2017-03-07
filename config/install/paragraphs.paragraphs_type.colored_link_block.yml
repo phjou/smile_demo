@@ -2,5 +2,5 @@ langcode: en
 status: true
 dependencies: {  }
 id: colored_link_block
-label: 'Colored link block'
+label: 'Bloc Découvrir'
 behavior_plugins: {  }

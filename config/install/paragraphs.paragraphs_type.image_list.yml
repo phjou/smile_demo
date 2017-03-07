@@ -2,5 +2,5 @@ langcode: en
 status: true
 dependencies: {  }
 id: image_list
-label: 'Image list'
+label: 'Bloc Image'
 behavior_plugins: {  }
