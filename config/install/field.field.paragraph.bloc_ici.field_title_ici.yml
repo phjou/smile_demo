@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_title_ici
+    - paragraphs.paragraphs_type.bloc_ici
+id: paragraph.bloc_ici.field_title_ici
+field_name: field_title_ici
+entity_type: paragraph
+bundle: bloc_ici
+label: Titre
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

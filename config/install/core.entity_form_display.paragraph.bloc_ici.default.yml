@@ -1,0 +1,47 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.bloc_ici.field_color_ici
+    - field.field.paragraph.bloc_ici.field_subtitle_ici
+    - field.field.paragraph.bloc_ici.field_target_ici
+    - field.field.paragraph.bloc_ici.field_title_ici
+    - paragraphs.paragraphs_type.bloc_ici
+  module:
+    - color_field
+    - link
+id: paragraph.bloc_ici.default
+targetEntityType: paragraph
+bundle: bloc_ici
+mode: default
+content:
+  field_color_ici:
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+    type: color_field_widget_html5
+  field_subtitle_ici:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+  field_target_ici:
+    weight: 3
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+  field_title_ici:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+hidden:
+  created: true
+  status: true
+  uid: true

@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_subtitle_ici
+    - paragraphs.paragraphs_type.bloc_ici
+id: paragraph.bloc_ici.field_subtitle_ici
+field_name: field_subtitle_ici
+entity_type: paragraph
+bundle: bloc_ici
+label: Sous-titre
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

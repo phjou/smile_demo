@@ -4,6 +4,7 @@ dependencies:
   config:
     - field.storage.node.field_demo_page_paragraphs
     - node.type.page_demo
+    - paragraphs.paragraphs_type.bloc_ici
     - paragraphs.paragraphs_type.colored_link_block
     - paragraphs.paragraphs_type.image_list
     - paragraphs.paragraphs_type.newsletter
@@ -30,6 +31,7 @@ settings:
       text_with_right_column: text_with_right_column
       newsletter: newsletter
       colored_link_block: colored_link_block
+      bloc_ici: bloc_ici
       paragraph_rich_text: paragraph_rich_text
       product_block: product_block
     target_bundles_drag_drop:
@@ -45,6 +47,9 @@ settings:
       colored_link_block:
         enabled: true
         weight: 7
+      bloc_ici:
+        enabled: true
+        weight: 8
       paragraph_rich_text:
         enabled: true
         weight: 10

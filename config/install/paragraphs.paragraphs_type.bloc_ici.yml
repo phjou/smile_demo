@@ -1,0 +1,6 @@
+langcode: en
+status: true
+dependencies: {  }
+id: bloc_ici
+label: 'Bloc Ici'
+behavior_plugins: {  }

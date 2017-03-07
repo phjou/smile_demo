@@ -1,0 +1,51 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.bloc_ici.field_color_ici
+    - field.field.paragraph.bloc_ici.field_subtitle_ici
+    - field.field.paragraph.bloc_ici.field_target_ici
+    - field.field.paragraph.bloc_ici.field_title_ici
+    - paragraphs.paragraphs_type.bloc_ici
+  module:
+    - color_field
+    - link
+id: paragraph.bloc_ici.default
+targetEntityType: paragraph
+bundle: bloc_ici
+mode: default
+content:
+  field_color_ici:
+    weight: 2
+    label: hidden
+    settings:
+      format: hex
+      opacity: true
+    third_party_settings: {  }
+    type: color_field_formatter_text
+  field_subtitle_ici:
+    weight: 1
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+  field_target_ici:
+    weight: 3
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+  field_title_ici:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+hidden: {  }

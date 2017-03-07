@@ -3,6 +3,7 @@ status: true
 dependencies:
   config:
     - field.storage.paragraph.field_colonne_60_
+    - paragraphs.paragraphs_type.bloc_ici
     - paragraphs.paragraphs_type.colored_link_block
     - paragraphs.paragraphs_type.image_list
     - paragraphs.paragraphs_type.newsletter
@@ -27,6 +28,7 @@ settings:
     target_bundles:
       colored_link_block: colored_link_block
       image_list: image_list
+      bloc_ici: bloc_ici
       newsletter: newsletter
       paragraph_rich_text: paragraph_rich_text
       product_block: product_block
@@ -35,6 +37,9 @@ settings:
         enabled: true
         weight: 7
       image_list:
+        enabled: true
+        weight: 8
+      bloc_ici:
         enabled: true
         weight: 8
       newsletter:
