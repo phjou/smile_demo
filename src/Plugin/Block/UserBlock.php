@@ -11,7 +11,7 @@ use Drupal\Core\Form\FormStateInterface;
  *
  * @Block(
  *   id = "magento_user_block",
- *   admin_label = @Translation("Magento Adresses block"),
+ *   admin_label = @Translation("Magento User block"),
  * )
  */
 class UserBlock extends BlockBase {
@@ -34,7 +34,7 @@ class UserBlock extends BlockBase {
       $result = curl_exec($ch);
  
       $result_object = json_decode($result);
-   
+      $print .= '<h2><b>Mes adresses</b></h2>';
       $print .= $this->formatAddress($result_object, 'default_billing');
       $print .= $this->formatAddress($result_object, 'default_shipping');
     }
@@ -50,7 +50,10 @@ class UserBlock extends BlockBase {
       $address_string = '';
       foreach ($result_object->addresses as $address) {
         if ($address->id == $result_object->{$type}) {
-          $address_string .= '<p><b>' . $type . '</b><br/>';
+          $typeTitle = ($type == 'default_billing') ? 'Adresse de facturation' : '';
+          $typeTitle = ($type == 'default_shipping') ? 'Adresse de livraison' : $typeTitle;         
+
+          $address_string .= '<p><b>' . $typeTitle . '</b><br/>';
           if (!empty($address->street[0])) {
             $address_string .= $address->street[0];
           }
@@ -58,10 +61,10 @@ class UserBlock extends BlockBase {
             $address_string .= ' ' . $address->postcode;
           }
           if (!empty($address->city)) {
-            $address_string .= ' ' . $address-> city;
+            $address_string .= ' ' . $address->city;
           }
           if (!empty($address->telephone)) {
-            $address_string .= '<br/> Tel: ' . $address-> telephone;
+            $address_string .= '<br/> Tel: ' . $address->telephone;
           }
 
           $address_string .= '</p>';
