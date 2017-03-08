@@ -28,7 +28,7 @@ class OrdersBlock extends BlockBase {
 
     $print = '';
     if (!empty($token)) {
-      $ch = curl_init("http://ixina-fr.fbd.vitry.intranet/index.php/rest/V1/customers/me");
+      $ch = curl_init("http://ixina-fr.fbd.clients.smile.fr/index.php/rest/V1/customers/me");
       curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "GET");
       curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
       curl_setopt($ch, CURLOPT_HTTPHEADER, array("Content-Type: application/json", "Authorization: Bearer " . json_decode($token)));
@@ -37,7 +37,7 @@ class OrdersBlock extends BlockBase {
       $result_object = json_decode($result);
 
       $userData = array("username" => "dacou", "password" => "Magent_0");
-      $ch = curl_init("http://ixina-fr.fbd.vitry.intranet/index.php/rest/V1/integration/admin/token");
+      $ch = curl_init("http://ixina-fr.fbd.clients.smile.fr/index.php/rest/V1/integration/admin/token");
       curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
       curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($userData));
       curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -45,7 +45,7 @@ class OrdersBlock extends BlockBase {
 
       $token = curl_exec($ch);
 
-      $ch = curl_init("http://ixina-fr.fbd.vitry.intranet/index.php/rest/V1/orders?searchCriteria[filter_groups][0][filters][0][field]=customer_email&searchCriteria[filter_groups][0][filters][0][value]=" . $result_object->email);
+      $ch = curl_init("http://ixina-fr.fbd.clients.smile.fr/index.php/rest/V1/orders?searchCriteria[filter_groups][0][filters][0][field]=customer_email&searchCriteria[filter_groups][0][filters][0][value]=" . $result_object->email);
 
       curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "GET");
       curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);

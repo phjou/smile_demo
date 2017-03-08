@@ -26,7 +26,7 @@ class UserBlock extends BlockBase {
     
     $print = '';
     if (!empty($token)) {
-      $ch = curl_init("http://ixina-fr.fbd.vitry.intranet/index.php/rest/V1/customers/me");
+      $ch = curl_init("http://ixina-fr.fbd.clients.smile.fr/index.php/rest/V1/customers/me");
       curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "GET");
       curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
       curl_setopt($ch, CURLOPT_HTTPHEADER, array("Content-Type: application/json", "Authorization: Bearer " . json_decode($token)));
