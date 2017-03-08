@@ -1,0 +1,10 @@
+smile_demo.user_special_access:
+  path: '/node/{node}/user_access'
+  defaults:
+    _title: 'User Access'
+    _controller: '\Drupal\smile_demo\Controller\NodeController::specialAccess'
+  requirements:
+    _node_add_access: 'node'
+    node: \d+
+  options:
+    _node_operation_route: TRUE

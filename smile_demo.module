@@ -1,6 +1,7 @@
 <?php
 
 use \Drupal\Core\Form\FormStateInterface;
+use \Drupal\Core\Access\AccessResult;
 
 /**
  * Implements hook_theme().
@@ -63,3 +64,24 @@ function smile_demo_entity_presave(Drupal\Core\Entity\EntityInterface $entity) {
       $entity->set('field_magento_id', $magento_id);
     }
 }
+
+/**
+ * Implements hook_node_access().
+ */
+function smile_demo_node_access(\Drupal\node\NodeInterface $node, $op, \Drupal\Core\Session\AccountInterface $account) {
+  $config = \Drupal::config('node.special_access.settings');
+  $usersIdsSerialized = $config->get('authorized_users_' . $node->id());
+  if (!empty($usersIdsSerialized)) {
+    $usersIds = explode('+', $usersIdsSerialized);
+    if (in_array($account->id(), $usersIds)) {
+      return AccessResult::allowed()->cachePerPermissions();
+    }
+    else {
+      return AccessResult::forbidden();
+    }
+  }
+  else {
+    return AccessResult::forbidden();
+  }
+}
+

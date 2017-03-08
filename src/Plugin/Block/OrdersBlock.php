@@ -26,12 +26,6 @@ class OrdersBlock extends BlockBase {
     
     $ordersData = NULL;
 
-    $header = [
-      'product' => t('Produit'),
-      'price' => t('Prix'),
-      'quantity' => t('Quantité'),
-    ];
-
     $print = '';
     if (!empty($token)) {
       $ch = curl_init("http://ixina-fr.fbd.vitry.intranet/index.php/rest/V1/customers/me");
@@ -60,32 +54,22 @@ class OrdersBlock extends BlockBase {
       $result = curl_exec($ch);
       $ordersData = json_decode($result);
       $themeDatas = [];
-
       foreach($ordersData as $orders) {
         foreach($orders as $order) {
           $id = $order->entity_id;
-          if (!empty($id)) {
-            $themeDatas[$id]['id'] = $id;
-            $themeDatas[$id]['base_currency_code'] = $order->base_currency_code;
-            $themeDatas[$id]['subtotal'] = $order->subtotal;
-            $rows = [];
-            foreach($order->items as $item) {
-              $rows[] = [         
-                'product' => $item->name,
-                'price' => $item->row_total . ' ' . $themeDatas[$id]['base_currency_code'],
-                'quantity' => $item->qty_ordered
-              ];
-            }
-            $themeDatas[$id]['products'] = [
-              '#type' => 'table',
-              '#header' => $header,
-              '#rows' => $rows
+          $themeDatas[$id]['base_currency_code'] = $order->base_currency_code;
+          $themeDatas[$id]['subtotal'] = $order->subtotal;
+          foreach($order->items as $item) {
+            $themeDatas[$id]['items'][] = [
+              'name' => $item->name,
+              'price' => $item->row_total,
+              'quantity' => $item->qty_ordered
             ];
           }
         }
       }
     }
-    
+   
     return array(
       '#theme' => 'orders_block',
       '#orders' => $themeDatas,

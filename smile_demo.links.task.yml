@@ -1,0 +1,4 @@
+smile_demo.user_special_access:
+  route_name: smile_demo.user_special_access
+  base_route: entity.node.canonical
+  title: 'User Access'

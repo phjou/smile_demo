@@ -1,9 +1,13 @@
 <div>
-  <h2><b>Mes commandes</b></h2>
   {% for order in orders  %}
-    <h2>Commande #{{ order['id'] }}</h2>
-    {{ order['products']|render }}
-    <div>{{ "Total:"|t }} {{ order.subtotal }} {{ order['base_currency_code'] }}</div>
+    {% for product  in order['items'] %}
+      <div>
+        {{ product['name'] }}
+        {{ product['quantity'] }}
+        {{ product['price'] }}{{ order['base_currency_code'] }}
+      </div>
+    {% endfor %}
+    <div>{{ "Total:"|t }} {{ order['subtotal'] }}{{ order['base_currency_code'] }}</div>
   {% endfor %}
 </div>
 
