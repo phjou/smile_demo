@@ -31,6 +31,8 @@ class OrdersBlock extends BlockBase {
       $ch = curl_init("http://ixina-fr.fbd.clients.smile.fr/index.php/rest/V1/customers/me");
       curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "GET");
       curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+      curl_setopt($ch, CURLOPT_USERPWD, 'fbd:Cheeth7L');
+      curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
       curl_setopt($ch, CURLOPT_HTTPHEADER, array("Content-Type: application/json", "Authorization: Bearer " . json_decode($token)));
  
       $result = curl_exec($ch);
@@ -40,6 +42,8 @@ class OrdersBlock extends BlockBase {
       $ch = curl_init("http://ixina-fr.fbd.clients.smile.fr/index.php/rest/V1/integration/admin/token");
       curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
       curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($userData));
+      curl_setopt($ch, CURLOPT_USERPWD, 'fbd:Cheeth7L');
+      curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
       curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
       curl_setopt($ch, CURLOPT_HTTPHEADER, array("Content-Type: application/json", "Content-Lenght: " . strlen(json_encode($userData))));
 
@@ -48,6 +52,8 @@ class OrdersBlock extends BlockBase {
       $ch = curl_init("http://ixina-fr.fbd.clients.smile.fr/index.php/rest/V1/orders?searchCriteria[filter_groups][0][filters][0][field]=customer_email&searchCriteria[filter_groups][0][filters][0][value]=" . $result_object->email);
 
       curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "GET");
+      curl_setopt($ch, CURLOPT_USERPWD, 'fbd:Cheeth7L');
+      curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
       curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
       curl_setopt($ch, CURLOPT_HTTPHEADER, array("Content-Type: application/json", "Authorization: Bearer " . json_decode($token)));
 

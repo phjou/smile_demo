@@ -35,7 +35,9 @@ function smile_demo_form_alter(&$form, FormStateInterface $form_state, $form_id)
  */
 function smile_demo_magento_login($form, FormStateInterface $form_state) {
   $userData = array("username" => "phjou@smile.fr", "password" => "Azertyuiop1");
-  $ch = curl_init("http://ixina-fr.fbd.vitry.intranet/index.php/rest/V1/integration/customer/token");
+  $ch = curl_init("http://ixina-fr.fbd.clients.smile.fr/index.php/rest/V1/integration/customer/token");
+  curl_setopt($ch, CURLOPT_USERPWD, 'fbd:Cheeth7L'); 
+  curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
   curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
   curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($userData));
   curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -69,19 +71,21 @@ function smile_demo_entity_presave(Drupal\Core\Entity\EntityInterface $entity) {
  * Implements hook_node_access().
  */
 function smile_demo_node_access(\Drupal\node\NodeInterface $node, $op, \Drupal\Core\Session\AccountInterface $account) {
-  $config = \Drupal::config('node.special_access.settings');
-  $usersIdsSerialized = $config->get('authorized_users_' . $node->id());
-  if (!empty($usersIdsSerialized)) {
-    $usersIds = explode('+', $usersIdsSerialized);
-    if (in_array($account->id(), $usersIds)) {
-      return AccessResult::allowed()->cachePerPermissions();
+  if ($op != 'view') {
+    $config = \Drupal::config('node.special_access.settings');
+    $usersIdsSerialized = $config->get('authorized_users_' . $node->id());
+    if (!empty($usersIdsSerialized)) {
+      $usersIds = explode('+', $usersIdsSerialized);
+      if (in_array($account->id(), $usersIds)) {
+        return AccessResult::allowed()->cachePerPermissions();
+      }
+      else {
+        return AccessResult::forbidden();
+      }
     }
     else {
       return AccessResult::forbidden();
     }
-  }
-  else {
-    return AccessResult::forbidden();
   }
 }
 
